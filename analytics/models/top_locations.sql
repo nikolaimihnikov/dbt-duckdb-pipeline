@@ -1,7 +1,7 @@
 SELECT 
-    job_location as location,
+    job_location,
     count(*) as postings 
 FROM {{ ref('job_postings')}}
-GROUP by location
+GROUP by job_location
 ORDER by postings DESC
 limit 10
